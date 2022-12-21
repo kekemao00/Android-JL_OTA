@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.SettingsActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl_settings_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height">
+
+            <TextView
+                android:id="@+id/tv_settings_top_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/test_settings"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_settings_top_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                app:drawableStartCompat="@drawable/bg_back_selector" />
+
+            <TextView
+                android:id="@+id/tv_settings_top_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                app:drawableEndCompat="@drawable/bg_save_selector" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/rc_decoration">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_settings_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tv_settings_version_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_version"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_settings_version_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/tv_settings_version_name"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_settings_version_name"
+                    app:layout_constraintStart_toEndOf="@+id/tv_settings_version_name"
+                    app:layout_constraintTop_toTopOf="@+id/tv_settings_version_name"
+                    tools:text="V1.0.1" />
+
+                <CheckBox
+                    android:id="@+id/cb_settings_device_auth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/device_auth_option"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_settings_version_name" />
+
+                <CheckBox
+                    android:id="@+id/cb_settings_hid_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/hid_device_option"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_settings_device_auth" />
+
+                <CheckBox
+                    android:id="@+id/cb_settings_custom_reconnect_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/use_custom_reconnect_way_option"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_settings_hid_device" />
+
+                <CheckBox
+                    android:id="@+id/cb_settings_custom_auto_test_ota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/use_auto_test_ota_option"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_settings_custom_reconnect_way" />
+
+                <TextView
+                    android:id="@+id/tv_settings_communication_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/cur_communication_way"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_settings_custom_auto_test_ota" />
+
+                <Button
+                    android:id="@+id/btn_send_file_snapdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/bg_white"
+                    android:text="@string/snapdrop_trans_file"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_settings_send_spp_private_data" />
+
+                <RadioGroup
+                    android:id="@+id/rg_settings_communication_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_settings_communication_way">
+
+                    <RadioButton
+                        android:id="@+id/rb_settings_way_ble"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="@string/communication_way_ble"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <RadioButton
+                        android:id="@+id/rb_settings_way_spp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="@string/communication_way_spp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/sp_14" />
+
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/cb_settings_use_spp_private_channel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/use_spp_private_channel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_settings_communication_way" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_settings_send_spp_private_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_settings_use_spp_private_channel">
+
+                    <EditText
+                        android:id="@+id/et_settings_input_data"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="@string/input_data_hint"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:text="test"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btn_send_spp_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/bg_white"
+                        android:text="@string/send_spp_private_data"
+                        app:layout_constraintTop_toBottomOf="@+id/et_settings_input_data" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

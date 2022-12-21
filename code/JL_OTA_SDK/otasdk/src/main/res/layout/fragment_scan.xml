@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.ScanFragment">
+
+    <LinearLayout
+            android:id="@+id/ll_scan_ble_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+        <TextView
+                android:id="@+id/tv_scan_ble_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:text="@string/ble_filter" />
+
+        <EditText
+                android:id="@+id/ed_scan_ble_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/device_keyword"
+                android:inputType="text"
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tv_scan_tip"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="#F2F3F7"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/padding_left"
+            android:paddingEnd="@dimen/padding_left"
+            android:text="@string/scan_tip"
+            android:textColor="#444444" />
+
+
+    <com.ajguan.library.EasyRefreshLayout
+            android:id="@+id/easy_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_device_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_device_list"
+                android:layout_marginTop="-2dp"
+                tools:itemCount="8"
+                tools:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_device_list">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </com.ajguan.library.EasyRefreshLayout>
+
+</LinearLayout>

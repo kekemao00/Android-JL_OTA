@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">杰理OTA升级</string>
+
+    <string name="company_name">珠海杰理科技股份有限公司</string>
+
+
+    <string name="copy_right">Copyright@2019www.zh-jieli.com All Rights Reserved</string>
+    <string name="scaning_tip">正在搜索设备&#8230;</string>
+    <string name="scan_tip">设备列表</string>
+    <string name="tab_upgrade">设备升级</string>
+    <string name="tab_scan">设备连接</string>
+    <string name="ble_filter">设备过滤条件:</string>
+    <string name="device_keyword">设备名关键词</string>
+
+
+    <string name="device_status">设备状态:</string>
+    <string name="device_status_connected">已连接</string>
+    <string name="device_status_disconnected">未连接</string>
+    <string name="file_selection">文件选择</string>
+
+    <string name="bt_connecting">连接中&#8230;</string>
+    <string name="bt_connect_disconnected">连接已断开</string>
+    <string name="bt_connect_successed">连接成功</string>
+    <string name="bt_connect_failed">连接失败</string>
+    <string name="ota_please_chose_file">请选择升级文件</string>
+    <string name="ota_complete">升级完成</string>
+    <string name="ota_upgrading">正在升级</string>
+    <string name="ota_upgrade_cancel">升级已取消</string>
+    <string name="ota_upgrade_not_started">升级未开始</string>
+    <string name="bt_bluetooth_close">蓝牙已关闭</string>
+    <string name="ota_checking_upgrade_file">正在检验升级文件</string>
+    <string name="ota_upgrade_failed">升级失败: %s</string>
+    <string name="ota_check_file">校验文件中</string>
+    <string name="device_must_mandatory_upgrade">设备需要强制升级</string>
+    <string name="open_gpg_tip">应用需要GPS功能，请打开定位服务才可继续</string>
+    <!--MainActivity-->
+    <string name="double_tap_to_exit">再按一次点击退出应用</string>
+    <string name="upgrade">升级</string>
+    <string name="connect">连接</string>
+    <string name="bt_not_connect_device">设备未连接</string>
+
+    <!--OtaFragment-->
+    <string name="device_name">设备名称:</string>
+    <string name="device_addr">设备地址:</string>
+    <string name="device_type">设备类型:</string>
+
+    <string name="device_type_unknown">未知类型</string>
+    <string name="device_type_classic">经典蓝牙</string>
+    <string name="device_type_ble">BLE设备</string>
+    <string name="device_type_dual_mode">双模蓝牙设备</string>
+
+    <string name="none_file_tips">请把升级文件[xxx.ufw 或者 xxx.bfu]放到手机存储中\n\n1.如果手机系统是Android 10.0+，放到/Android/data/com.jieli.otasdk/files/com.jieli.otasdk/upgrade/\n\n2.如果手机系统是Android 10.0以下，放到/com.jieli.otasdk/upgrade/</string>
+    <string name="auto_test_ota">Auto OTA</string>
+    <string name="auto_test_ota_tip">正在自动化OTA测试，请先等待测试结束</string>
+    <!--SettingsActivity-->
+    <string name="test_settings">测试设置</string>
+    <string name="app_version">软件版本</string>
+    <string name="settings_success_and_restart">配置成功，即将退出应用</string>
+    <string name="device_auth_option">是否启用设备认证</string>
+    <string name="hid_device_option">是否HID设备</string>
+    <string name="use_custom_reconnect_way_option">是否自定义回连方式</string>
+    <string name="use_auto_test_ota_option">是否使用自动化测试OTA</string>
+
+    <string name="cur_communication_way">当前通讯方式</string>
+    <string name="communication_way_ble">BLE</string>
+    <string name="communication_way_spp">SPP</string>
+    <string name="use_spp_private_channel">是否使用SPP私有通道</string>
+    <string name="input_data_hint">输入发送数据</string>
+    <string name="send_spp_private_data">发送私有SPP数据</string>
+    <string name="snapdrop_trans_file">局域网传输文件</string>
+
+
+    <string name="err_no_browser">无法打开浏览器</string>
+    <string name="err_no_app">未找到用于打开此文件的应用</string>
+    <!-- Update -->
+    <!-- Welcome -->
+    <string name="app_welcome">欢迎使用 Snapdrop</string>
+    <string name="app_welcome_summary">1. 在您本地WiFi网络中的任何其他设备上打开 <a href="https://snapdrop.net">snapdrop.net</a> 或 Snapdrop app。\n2. 轻按您想要与之共享文件的设备。\n好了！文件将马上被共享…</string>
+    <!-- Download -->
+    <string name="download_save_pending">存储文件。请有点耐心…</string>
+    <string name="download_successful">下载成功</string>
+    <string name="notification_channel_name">下载完成</string>
+    <!-- Action Buttons -->
+    <string name="open">打开</string>
+    <!-- Settings / About -->
+    <!-- File sharing -->
+    <string name="intent_file">已选择一个要共享的文件</string>
+    <string name="intent_files">已选择多个要共享的文件</string>
+    <string name="intent_content">已选择要共享的内容</string>
+    <string name="error_filechooser">无法打开文件选择程序</string>
+    <string name="error_network">请确保您已经连接到WiFi网络</string>
+    <string name="ignore_error_network">忽略并继续</string>
+    <string name="pref_first_use">第一次使用SnapDrop</string>
+</resources>

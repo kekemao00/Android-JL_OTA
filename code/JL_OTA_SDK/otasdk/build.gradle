@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: "kotlin-kapt"
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.jieli.otasdk"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 10500
+        versionName "1.5.0"
+        archivesBaseName = "JLOTA_V${versionName}"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion = '30.0.3'
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    packagingOptions {
+        exclude 'META-INF/androidx.legacy_legacy-support-v4.version'
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21"
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    implementation 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
+    implementation 'com.blankj:utilcode:1.25.8'
+    //RecyclerView通用适配器模板库
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    implementation('com.github.hotchemi:permissionsdispatcher:3.3.2') {
+        exclude module: 'support-v13'
+    }
+    kapt 'com.github.hotchemi:permissionsdispatcher-processor:3.3.2'
+
+    implementation(name:"jl-component-lib_V1.1.7", ext:'aar')
+    implementation(name: "jl_dialog_V1.1.0", ext: 'aar')
+    implementation(name: "jl_bt_ota_V1.6.0", ext: 'aar')
+    implementation(name: "jl_file_picker_V1.0", ext: 'aar')
+//    implementation project(path:':jl_bt_ota')
+    implementation 'androidx.webkit:webkit:1.4.0'
+    implementation 'com.anggrayudi:storage:0.13.0'
+}

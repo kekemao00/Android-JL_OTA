@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tab_upgrade"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_main_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:padding="8dp"
+            android:src="@drawable/bg_settings_selector"
+            android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/bar_scan_status"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-7dp"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bar_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        app:itemIconTint="@drawable/tab_device"
+        app:menu="@menu/menu_bottom_navigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_white"
+        android:orientation="horizontal"
+        android:paddingTop="4dp">
+
+
+        <RadioButton
+            android:id="@+id/tab_upgrade"
+            style="@style/bottom_tab_rbtn"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_upgrade"
+            android:text="@string/tab_upgrade" />
+
+
+        <RadioButton
+            android:id="@+id/tab_device"
+            style="@style/bottom_tab_rbtn"
+            android:drawableTop="@drawable/tab_device"
+            android:text="@string/tab_scan" />
+
+
+    </RadioGroup>
+
+
+    <com.jieli.component.ui.widget.NoScrollViewPager
+        android:id="@+id/viewpage_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg_main"
+        android:layout_below="@id/top_main"
+        android:background="#F2F3F7" />
+
+</RelativeLayout>

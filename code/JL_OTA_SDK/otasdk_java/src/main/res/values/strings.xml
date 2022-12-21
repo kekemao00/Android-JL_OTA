@@ -1,0 +1,101 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">杰理OTA升级</string>
+
+    <string name="company_name">Zhuhai jili technology co., LTD</string>
+
+
+    <string name="copy_right">Copyright@2019www.zh-jieli.com All Rights Reserved</string>
+
+
+    <string name="scaning_tip">Searching&#8230;</string>
+    <string name="scan_tip">Device list</string>
+    <string name="tab_upgrade">Device upgrade</string>
+    <string name="tab_scan">Device connection</string>
+    <string name="ble_filter">BLE filter:</string>
+    <string name="device_keyword">Device name keyword</string>
+
+    <string name="bt_connecting">Connecting&#8230;</string>
+    <string name="bt_connect_disconnected">connection dropped</string>
+    <string name="bt_connect_successed">Connect Success</string>
+    <string name="bt_connect_failed">Connect failed</string>
+
+    <string name="device_status">Device Status:</string>
+    <string name="device_status_connected">Connected</string>
+    <string name="device_status_disconnected">Disconnected</string>
+    <string name="file_selection">File selection</string>
+    <string name="ota_please_chose_file">Please select upgrade file</string>
+    <string name="ota_complete">Upgrade is complete</string>
+    <string name="ota_upgrading">Upgrading&#8230;</string>
+    <string name="ota_checking_upgrade_file">Checking the upgrade file</string>
+    <string name="ota_upgrade_failed">Upgrade failed: %s</string>
+    <string name="ota_upgrade_cancel">Upgrade cancelled</string>
+    <string name="ota_upgrade_not_started">Upgrade not started</string>
+    <string name="bt_bluetooth_close">Bluetooth is off</string>
+    <string name="ota_check_file">Check File</string>
+    <string name="device_must_mandatory_upgrade">Device must be forced to upgrade</string>
+    <string name="open_gpg_tip">Application requires GPS function, please open the location service to continue.</string>
+
+    <!--MainActivity-->
+    <string name="double_tap_to_exit">Press again to exit the application</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="connect">Connect</string>
+    <string name="bt_not_connect_device">Not device connected!</string>
+
+    <!--OtaFragment-->
+    <string name="device_name">Device Name:</string>
+    <string name="device_addr">Device Address:</string>
+    <string name="device_type">Device Type:</string>
+
+    <string name="device_type_unknown">Unknown Device</string>
+    <string name="device_type_classic">Classic Device</string>
+    <string name="device_type_ble">Ble Device</string>
+    <string name="device_type_dual_mode">Dual Mode</string>
+
+    <string name="none_file_tips">Put the upgrade file [xxx.ufw or xxx.bfu] in the storage of the mobile phone.\n\n 1.If the phone is Running Android 10.0+, put it in /Android/data/com.jieli.otasdk/files/com.jieli.otasdk/upgrade/\n\n2.If the phone is running Android 10.0 or below, put it in /com.jieli.otasdk/upgrade/</string>
+
+    <string name="auto_test_ota">Auto OTA</string>
+    <string name="auto_test_ota_tip">The OTA test is being automated. Please wait for the test to end</string>
+    <!--SettingsActivity-->
+    <string name="test_settings">Test Settings</string>
+    <string name="app_version">Application Version</string>
+    <string name="settings_success_and_restart">The configuration is successful and the application will be exited</string>
+    <string name="device_auth_option">Whether to enable device authentication</string>
+    <string name="hid_device_option">HID device or not</string>
+    <string name="use_custom_reconnect_way_option">Whether to customize method to reconnect the device</string>
+    <string name="use_auto_test_ota_option">Use automated test OTA</string>
+
+    <string name="cur_communication_way">Current Communication Way</string>
+    <string name="communication_way_ble">BLE</string>
+    <string name="communication_way_spp">SPP</string>
+    <string name="use_spp_private_channel">Whether to use SPP private channels</string>
+    <string name="input_data_hint">Input data that you want to send</string>
+    <string name="send_spp_private_data">Send Spp Private Data</string>
+    <string name="snapdrop_trans_file">LAN transfer file</string>
+
+    <string name="err_no_browser">Can\'t open browser</string>
+    <string name="err_no_app">No app installed to open this file</string>
+
+    <!-- Update -->
+
+    <!-- Welcome -->
+    <string name="app_welcome">Welcome to Snapdrop</string>
+    <string name="app_welcome_summary">1. Open <a href="https://snapdrop.net">snapdrop.net</a> or the Snapdrop app on any other device in your local WiFi network.\n2. Tap on the device you want to share the file(s) with.\n3. Done! The file(s) will be sent…</string>
+
+    <!-- Download -->
+    <string name="download_save_pending">Storing the file. Please have a little patience…</string>
+    <string name="download_successful">Download successful</string>
+    <string name="notification_channel_name">Download completed</string>
+
+    <!-- Action Buttons -->
+    <string name="open">open</string>
+    <!-- Settings / About -->
+
+    <!-- File sharing -->
+    <string name="intent_file">A file is selected for sharing</string>
+    <string name="intent_files">Files are selected for sharing</string>
+    <string name="intent_content">Content is selected for sharing</string>
+    <string name="error_filechooser">Cannot open file chooser</string>
+    <string name="error_network">Please verify that you are connected with a WiFi network</string>
+    <string name="ignore_error_network">Let me in anyway</string>
+    <string name="pref_first_use">First use SnapDrop</string>
+</resources>
