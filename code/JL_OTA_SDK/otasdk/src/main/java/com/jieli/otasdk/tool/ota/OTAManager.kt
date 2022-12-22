@@ -137,9 +137,9 @@ class OTAManager(context: Context) : BluetoothOTAManager(context) {
         bluetoothOption.isUseJLServer = false
         //配置OTA参数
         configure(bluetoothOption)
-
+        bleManager.registerBleEventCallback(bleEventCallback)
+        sppManager.registerSppEventCallback(sppEventCallback)
         if (communicationWay == JL_Constant.PROTOCOL_BLE) {
-            bleManager.registerBleEventCallback(bleEventCallback)
             if (bleManager.connectedBtDevice != null) {
                 onBtDeviceConnection(bleManager.connectedBtDevice, StateCode.CONNECTION_OK)
                 onMtuChanged(
@@ -148,7 +148,6 @@ class OTAManager(context: Context) : BluetoothOTAManager(context) {
                 )
             }
         } else {
-            sppManager.registerSppEventCallback(sppEventCallback)
             if (sppManager.connectedSppDevice != null) {
                 onBtDeviceConnection(sppManager.connectedSppDevice, StateCode.CONNECTION_OK)
             }
@@ -157,11 +156,16 @@ class OTAManager(context: Context) : BluetoothOTAManager(context) {
 
 
     override fun getConnectedDevice(): BluetoothDevice? {
-        if (communicationWay == JL_Constant.PROTOCOL_BLE) {
+        if (bleManager.connectedBtDevice!=null){
             return bleManager.connectedBtDevice
-        } else {
+        }else{
             return sppManager.connectedSppDevice
         }
+//        if (communicationWay == JL_Constant.PROTOCOL_BLE) {
+//            return bleManager.connectedBtDevice
+//        } else {
+//            return sppManager.connectedSppDevice
+//        }
     }
 
     override fun getConnectedBluetoothGatt(): BluetoothGatt? {
@@ -173,11 +177,11 @@ class OTAManager(context: Context) : BluetoothOTAManager(context) {
     }
 
     override fun connectBluetoothDevice(bluetoothDevice: BluetoothDevice?) {
-        if (communicationWay == JL_Constant.PROTOCOL_BLE) {
+//        if (communicationWay == JL_Constant.PROTOCOL_BLE) {
             bleManager.connectBleDevice(bluetoothDevice)
-        } else {
-            sppManager.connectSpp(bluetoothDevice, SppManager.UUID_SPP)
-        }
+//        } else {
+//            sppManager.connectSpp(bluetoothDevice, SppManager.UUID_SPP)
+//        }
     }
 
     override fun disconnectBluetoothDevice(bluetoothDevice: BluetoothDevice?) {
@@ -192,7 +196,7 @@ class OTAManager(context: Context) : BluetoothOTAManager(context) {
 //        val ret = bluetoothClient.jlBtManager.sendDataToDevice(bluetoothDevice, bytes)
 //        JL_Log.d("zzc_bluetooth", "sendDataToDevice : ret = $ret")
         if (bluetoothDevice == null || bytes == null) return false
-        if (communicationWay == JL_Constant.PROTOCOL_BLE) {
+        if (bleManager.connectedBtDevice!=null/*communicationWay == JL_Constant.PROTOCOL_BLE*/) {
             bleManager.writeDataByBleAsync(
                 bluetoothDevice,
                 BleManager.BLE_UUID_SERVICE,
