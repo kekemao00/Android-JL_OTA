@@ -1,4 +1,4 @@
-package com.jieli.otasdk_java.tool.ota;
+package com.jieli.otasdk.tool.ota;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -16,14 +16,14 @@ import com.jieli.jl_bt_ota.tool.DeviceReConnectManager;
 import com.jieli.jl_bt_ota.util.BluetoothUtil;
 import com.jieli.jl_bt_ota.util.CHexConver;
 import com.jieli.jl_bt_ota.util.JL_Log;
-import com.jieli.otasdk_java.MainApplication;
-import com.jieli.otasdk_java.tool.ota.ble.BleManager;
-import com.jieli.otasdk_java.tool.ota.ble.interfaces.BleEventCallback;
-import com.jieli.otasdk_java.tool.ota.ble.interfaces.OnWriteDataCallback;
-import com.jieli.otasdk_java.tool.ota.spp.SppManager;
-import com.jieli.otasdk_java.tool.ota.spp.interfaces.OnWriteSppDataCallback;
-import com.jieli.otasdk_java.tool.ota.spp.interfaces.SppEventCallback;
-import com.jieli.otasdk_java.util.JL_Constant;
+import com.jieli.otasdk.MainApplication;
+import com.jieli.otasdk.tool.ota.ble.BleManager;
+import com.jieli.otasdk.tool.ota.ble.interfaces.BleEventCallback;
+import com.jieli.otasdk.tool.ota.ble.interfaces.OnWriteDataCallback;
+import com.jieli.otasdk.tool.ota.spp.SppManager;
+import com.jieli.otasdk.tool.ota.spp.interfaces.OnWriteSppDataCallback;
+import com.jieli.otasdk.tool.ota.spp.interfaces.SppEventCallback;
+import com.jieli.otasdk.util.JL_Constant;
 
 import java.util.UUID;
 
