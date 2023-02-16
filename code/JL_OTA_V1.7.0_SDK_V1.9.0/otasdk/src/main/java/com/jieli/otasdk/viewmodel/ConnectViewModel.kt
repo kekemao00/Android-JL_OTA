@@ -37,7 +37,7 @@ open class ConnectViewModel : BluetoothViewModel() {
             } else {
                 ScanResult(ScanResult.SCAN_STATUS_IDLE)
             }
-            scanResultMLD.postValue(result)
+            scanResultMLD.value = result
         }
 
         override fun onDiscovery(device: BluetoothDevice?, bleScanMessage: BleScanInfo?) {

@@ -648,8 +648,11 @@ public class SppManager implements SendSppDataThread.ISppOp {
         List<BluetoothDevice> list = BluetoothUtil.getSystemConnectedBtDeviceList(mContext);
         if (null == list || list.isEmpty()) return;
         for (BluetoothDevice device : list) {
-            if (BluetoothDevice.DEVICE_TYPE_CLASSIC == device.getType() && !BluetoothUtil.deviceEquals(mConnectedSppDevice, device)) {
-                mSppEventCallbackManager.onDiscoveryDevice(device, 0);
+            if (isSppDevice(device) && !BluetoothUtil.deviceEquals(mConnectedSppDevice, device)) {
+                if (!mDiscoveredEdrDevices.contains(device)) {
+                    mDiscoveredEdrDevices.add(device);
+                    mSppEventCallbackManager.onDiscoveryDevice(device, 0);
+                }
             }
         }
     }
@@ -900,6 +903,12 @@ public class SppManager implements SendSppDataThread.ISppOp {
         }
     }
 
+    @SuppressLint("MissingPermission")
+    private boolean isSppDevice(BluetoothDevice device) {
+        if (!AppUtil.checkHasConnectPermission(mContext)) return false;
+        return device != null && device.getType() != BluetoothDevice.DEVICE_TYPE_LE;
+    }
+
     private final RcspAuth.OnRcspAuthListener mOnRcspAuthListener = new RcspAuth.OnRcspAuthListener() {
         @Override
         public void onInitResult(boolean result) {
@@ -948,7 +957,7 @@ public class SppManager implements SendSppDataThread.ISppOp {
                     BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                     short rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, (short) -1);
 //                    JL_Log.d(TAG, "recv action : ACTION_FOUND, device = " + printDeviceInfo(device) + ", rssi = " + rssi);
-                    if (AppUtil.checkHasConnectPermission(context) && device != null && device.getType() == BluetoothDevice.DEVICE_TYPE_CLASSIC && BluetoothUtil.isBluetoothEnable()) {
+                    if (isSppDevice(device) && BluetoothUtil.isBluetoothEnable()) {
                         if (!mDiscoveredEdrDevices.contains(device)) {
                             mDiscoveredEdrDevices.add(device);
                             mSppEventCallbackManager.onDiscoveryDevice(device, rssi);
